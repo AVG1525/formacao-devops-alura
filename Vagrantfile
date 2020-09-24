@@ -1,5 +1,6 @@
 $script_nginx = <<-SCRIPT
-  echo sudo apt update && sudo apt install nginx
+  apt-get update && \
+  apt-get install nginx
 SCRIPT
 
 Vagrant.configure("2") do |config|
