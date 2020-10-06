@@ -32,4 +32,17 @@ Vagrant.configure("2") do |config|
               apt-add-repository --yes --update ppa:ansible/ansible && \
               apt-get install -y ansible"
   end
+
+
+  config.vm.define "dockerhost" do |dk_host|
+    dk_host.vm.provider "virtualbox" do |vbx|
+      vbx.memory = 512
+      vbx.cpus = 1
+      vbx.name = "ubuntu_docker"
+    end
+
+    dk_host.vm.provision "shell",
+      inline: "apt-get update && apt-get install -y docker.io"
+  end
+
 end
