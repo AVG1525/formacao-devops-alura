@@ -3,6 +3,10 @@ $script_nginx = <<-SCRIPT
   apt-get install nginx
 SCRIPT
 
+$script_docker = <<-SCRIPT
+  apt-get update && \
+  apt-get install -y docker.io
+SCRIPT
 
 Vagrant.configure("2") do |config|
   
@@ -41,8 +45,7 @@ Vagrant.configure("2") do |config|
       vbx.name = "ubuntu_docker"
     end
 
-    dk_host.vm.provision "shell",
-      inline: "apt-get update && apt-get install -y docker.io"
+    dk_host.vm.provision "shell", inline: $script_docker
   end
 
 end
