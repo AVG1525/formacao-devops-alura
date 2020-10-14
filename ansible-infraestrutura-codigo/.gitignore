@@ -1,0 +1,25 @@
+# Created by https://www.toptal.com/developers/gitignore/api/vscode,ansible,vagrant
+# Edit at https://www.toptal.com/developers/gitignore?templates=vscode,ansible,vagrant
+
+### Ansible ###
+*.retry
+
+### Vagrant ###
+# General
+.vagrant/
+
+# Log files (if you are creating logs in debug mode, uncomment this)
+# *.log
+
+### Vagrant Patch ###
+*.box
+
+### vscode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# End of https://www.toptal.com/developers/gitignore/api/vscode,ansible,vagrant
